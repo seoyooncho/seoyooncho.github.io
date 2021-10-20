@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .menu{
+        float: left;
+        width: 20%;
+        text-align: center;
+      }
+      .menu a {
+        background-color: #e5e5e5;
+        padding: 8px;
+        margin-top: 7px;
+        display: block;
+        width: 100%;
+        color: black;
+      }
+      .main{
+        float: left;
+        width: 60%;
+        padding: 0 20px;
+      }
+      .right {
+        background-color: #e5e5e5;
+        float: left;
+        width: 20%;
+        padding: 15px;
+        margin-top: 7px;
+        text-align: center;
+      }
+      nav{
+         font-size: 18pt;
+         font-family: 'lush';
+         position: relative;
+       }
+       nav ul{
+         padding: 0;
+         margin: 0 auto;
+         width: auto;
+       }
+       nav li{
+       }
+       nav a{
+         line-height: 60px;
+         height: 60px;
+       }
+       nav li a{
+         box-sizing: border-box;
+         -moz-box-sizing: border-box;
+         -webkit-box-sizing: border-box;
+       }
+       nav li:last-child a{
+         border-right: 0;
+           }
+       nav a:hover, nav a:active{
+       }
+       nav a#pull{
+         display: none;
+       }
+         html {
+         -webkit-touch-callout:none;
+         -webkit-user-select:none;
+         -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+         }
+
+         ul{
+           /*list-style-type: none;*/
+           margin: 0;
+           padding: 0;
+           background-color: #333;
+           text-align: center;
+         }
+         li{
+           /*position: relative;*/
+           display: inline-block;
+         }
+         li a{
+           color: #FFFFFF;
+           text-align: center;
+           padding: 14.5px 16px;
+           text-decoration: none;
+         }
+         li a:hover{
+           /*color: #597812;*/
+           color: 	#008080;
+           font-weight:normal;
+         }
+         .box {
+          width: 5000px;
+          height: 50px;
+          text-align: center;
+          max-width: 100%;
+          background-position: center;
+          background-size: cover;
+          background-color: #333333;color: white;
+          position: absolute;z-index: 1;
+        }
+        span{
+          font-family: 'lush';
+          color: 	#ffffff;
+        }
+        p {
+          font-family: '더페이스샵 잉크립퀴드체';
+          font-size: 35px;
+            color: 	#ffffff;
+        }
+      @media only screen and (max-width:620px) {
+        /* For mobile phones: */
+        .menu, .main, .right {
+          width: 100%;
+        }
+
+  }
+
+    </style>
+  </head>
+
+
+<body style= "font-family:Verdana;color:#aaaaaa;"topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" bgcolor="#000000">
+
+  <div class="box" >
+    <nav class="clearfix">
+      <ul class="clearfix">
+        <li><a href="http://www._____.com">LUSH</a></li> <!--""<-여기 부분에 URL 작성하면 됨-->
+        <li><a href="http://www._____.com/About">BEST SELLERS</a></li>
+        <li><a href="http://www._____.com/Project">ABOUT US</a></li>
+
+    </ul>
+    <a id="pull" href="#"></a>
+  </nav>
+  </div>
+ <br><br><br><br>
+      <div style="overflow:auto;">
+
+        <img src="img/01.jpg" id=mainImage alt="slide" style="display: block; margin: 0 auto;"align="right"/>
+        <br><br><br>
+ <span style="margin-top:20px;font-size:35px;" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Welcome to lush</span>
+ <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;반갑습니다 러쉬입니다</p>
+        <script>
+          var myImage = document.getElementById("mainImage");
+          var imageArray = [ "img/01.jpg",
+              "img/02.jpg", "img/03.jpg", "img/04.jpg" ];
+          var imageIndex = 0;
+
+          function changeImage() {
+            myImage.setAttribute("src", imageArray[imageIndex]);
+            imageIndex++;
+            if (imageIndex >= imageArray.length) {
+              imageIndex = 0;
+            }
+          }
+          setInterval(changeImage, 3000);
+        </script>
+
+          </div>
+
+          <div style="background-color:#333333;text-align:center;padding:10px;
+          margin-top:7px;"align="bottom"> ©copyright </div>
+
+          </div>
+
+
+  </body>
+</html>
