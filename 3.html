@@ -393,3 +393,9 @@ jQuery(document).ready(function() {
 
 </body>
 </html>
+$ git checkout gh-pages
+$ git merge --no-ff --no-commit master  # prepare the merge but don’t commit it (as if there were a merge conflict)
+$ npm run build                         # (or whatever your build process is)
+$ git add .                             # stage the newly built files
+$ git merge --continue                  # commit the merge
+$ git push origin gh-pages
