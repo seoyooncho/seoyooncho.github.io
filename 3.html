@@ -1,0 +1,401 @@
+<html>
+<head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Candal&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>기말</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<style>
+    * {
+        margin:0px;
+        padding:0px;
+    }
+
+
+    .animation_canvas  {
+        overflow:hidden;
+        position:relative;
+        float:left;
+        width:400px;
+        height: 400px;
+    }
+
+    .slide_section {
+        position:absolute;
+    }
+
+    #leftMove {
+        top:50%;
+        left:2%;
+    }
+
+    #rightMove {
+        top:50%;
+        left:96%;
+    }
+
+    .slide_board {
+
+    }
+
+    .move_arrow {
+
+        display:table-cell;
+        vertical-align:middle;
+    }
+
+
+    .slider_panel {
+        width:calc(400px * 5);
+        position:relative;
+    }
+
+
+    .slider_image {
+        float:left;
+        width:400px;
+
+    }
+    img.slider_image {
+      float:left;
+       width:400px;
+ }
+
+
+
+
+    .control_panel  {
+        position:absolute;
+        overflow:hidden;
+        top:90%;
+        left:27%;
+    }
+
+    .control_button {
+        font-size:11px;
+        width:15px;
+        height:18px;
+        border:1px solid #D4D4D4;
+        background-color:#F4F4F4;
+        position:center;
+        float:left;
+        cursor:pointer;
+        margin-left:8px;
+        margin-right:15px;
+        text-align:center;
+        font-weight:bold;
+    }
+
+
+    .control_button:hover {
+        border:1px solid #F4F4F4;
+        background-color:#8B4513;
+        color:#FFFFFF;
+    }
+
+
+    .control_button.active {
+        border:1px solid #8B4513;
+        background-color:#8B4513;
+        color:#FFFFFF;
+    }
+    p {
+      font-family: 'Gaegu', cursive;
+      margin-right: 250px;
+      color: #8B0000;
+      font-size: 35px;
+      line-height: 250%;
+    }
+    a:link{
+      color: #8B4513;
+      text-decoration: none;
+    }
+    a:visited{
+      color: #8B4513;
+      text-decoration: none;
+    }
+    a:hover{
+      color: #DEB887;
+      text-decoration: none;
+    }
+    a:active{
+      color: #DEB887;
+      text-decoration: none;
+      background-color: #fee799;
+    }
+    body{
+      background-color: #fee799;
+    }
+    a{
+    font-family: 'Candal', sans-serif;
+      font-size: 20px;
+    }
+    .nav-item{
+      color: #DEB887;
+      text-decoration: none;
+    }
+    .dropdown-item:hover{
+      color: #DEB887;
+      text-decoration: none;
+    }
+    .dropdown-item:active{
+      color: #DEB887;
+      text-decoration: none;
+      background-color: white;
+    }
+  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    color: #DEB887;
+    text-decoration: none;
+    border-color: white white #DEB887;
+  }
+  .nav-tabs{
+    border-bottom: 1px solid #DEB887;
+  }
+.nav-tabs .nav-link:hover{
+  border: 1px solid #DEB887;
+}
+footer{
+        width: 100%;
+        height: 160px;
+
+        background-color: #EAC65F;
+
+      }
+      #footer_box{
+        width: 1140px;
+        height: 150px;
+        margin: 0 auto;
+        border: solid 1px #EAC65F;
+      }
+      #footer_logo{
+        float: left;
+        margin: 20px 0 0 30px;
+        border: solid 1px #EAC65F;
+      }
+      #address{
+        float: right;
+        margin: 0 0 0 10px;
+        color: #cccccc;
+        border: solid 1px #EAC65F;
+      }
+      h6{
+        font-family: 'Gaegu', cursive;
+        color: #A52A2A;
+        font-size: 40px;
+      }
+      h2 {
+        font-family: 'Gaegu', cursive;
+        margin:0 auto;
+        color: #8B0000;
+        font-size: 17px;
+      }
+      h3 {
+        font-family: 'Gaegu', cursive;
+margin-right: -500px;
+        color: #8B0000;
+        font-size: 25px;
+        line-height: 150%;
+      }
+      h4{
+        font-family: 'Gaegu', cursive;
+        margin-right: 210px;
+        color: #8B0000;
+        font-size: 17px;
+        line-height: 150%;
+      }
+      #main_contents{
+        position: center;
+        width: 848px;
+margin-top: 60px;
+
+
+      }
+
+      #main_contents h3 {
+        font-size: 30px;
+        padding-bottom: 8px;
+        margin-top:400px;
+       margin-left: 410px;
+
+  font-family: 'Gaegu', cursive;
+      }
+</style>
+</head>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+jQuery(document)
+.ready(function() {
+
+    var canvasSize = jQuery("#canvas").css("width");
+    var calcSize = canvasSize.split("px");
+    jQuery(".slider_image").css("width", canvasSize);
+
+    var slideMax = jQuery(".control_button").length;
+
+    jQuery(".slider_panel").css("width", calcSize[0] * slideMax);
+
+    function moveArrow(sum) {
+
+        var num = jQuery(".active").index();
+        var index = jQuery(".active").index() + sum;
+
+        if(index < 0) { index = slideMax; }
+        if(index >= slideMax) { index = 0; }
+
+        moveSlider(index);
+    }
+
+    function moveSlider(index) {
+
+        var willMoveLeft = -(index * calcSize[0]);
+        jQuery(".slider_panel").animate({ left: willMoveLeft }, "slow");
+
+        jQuery(".control_button[data-index=" + index + "]").addClass("active");
+        jQuery(".control_button[data-index!=" + index + "]").removeClass("active");
+
+        jQuery(".slider_text[data-index=" + index + "]").show().animate({
+            left : 0
+        }, "slow");
+        jQuery(".slider_text[data-index!=" + index + "]").hide("slow", function() {
+            jQuery(this).css("left", -300);
+        });
+    }
+
+    jQuery(".slider_text").css("left", -300).each(function(index) {
+        jQuery(this).attr("data-index", index);
+    });
+
+    jQuery("#leftMove").on("click", function() { moveArrow(-1) });
+    jQuery("#rightMove").on("click", function() { moveArrow(1) });
+
+    jQuery(".control_button").each(function (index) {
+        jQuery(this).attr("data-index", index);
+    }).click(function () {
+        var index = jQuery(this).attr("data-index");
+        moveSlider(index);
+    });
+
+    var randomNumber = Math.floor(Math.random() * slideMax);
+    moveSlider(randomNumber);
+
+    var playAction = "";
+
+    playAction = setInterval(function() {
+        moveArrow(1);
+    }, 5000);
+
+    jQuery(".slide_board").hover(
+
+        function() {
+            clearInterval(playAction);
+        }
+
+        , function () {
+            playAction = setInterval(function() {
+                moveArrow(1);
+            }, 5000);
+        }
+    );
+});
+</script>
+<body style="text-align:center;">
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <br><br>
+                  <div id='logo'>
+            <a href='index.html'><img src='./img/logo.png'></a>
+
+
+          </div>
+                <br><br>
+
+                <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    <a class="nav-link" href="1.html">Dinotaeng</a>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="drop1.html">Store</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="drop1.html">For Digital</a>
+                      <a class="dropdown-item" href="drop2.html">Living</a>
+
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="3.html">Lanking</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="4.html">Gallery</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<br><br><br><br>
+  <h6><mark>실시간 순위</mark></h6>
+  <br>
+    <div id="canvas" style="margin:0 auto; width:400;">
+        <?php include "./slider.php"; ?>
+        <body style="text-align:center;">
+    <div class="slide_board">
+        <div class="animation_canvas">
+            <div class="slider_panel">
+                <img class="slider_image" src="img/l1.png">
+                <img class="slider_image" src="img/l2.png">
+                <img class="slider_image" src="img/l3.png">
+                <img class="slider_image" src="img/l4.png">
+                <img class="slider_image" src="img/l5.png">
+            </div>
+
+
+
+            <div class="control_panel">
+                <div class="control_button">1</div>
+                <div class="control_button">2</div>
+                <div class="control_button">3</div>
+                <div class="control_button">4</div>
+                <div class="control_button">5</div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    <br><br>
+    <div id='main_contents'>
+      <h3>많은 사랑을 받고 있는 다이노탱 제품을 확인해보세요!</h3>
+    </div>
+    <img src='img/bg.png' width='1775' height="350" align="bottom">
+
+
+    <footer>
+
+              <div id='footer_box'>
+                  <div id='footer_logo'>
+                    <img src='img/logo.png'>
+
+              </div>
+
+              <ul id='address'>
+                <h2>66, Gyewondaehak-ro, Uiwang-si, Gyeonggi-do, Republic of Korea</h2>
+                <h2>INSTARGRAM  @kaywon_univ @0CT06</h2>
+                <h2>E-MAIL  22161116@kaywon.ac.kr</h2>
+                <h2>©COPYRIGHT YOON ALL RIGHTS RESERVED </h2>
+
+              </ul>
+              </div>
+             </footer>
+
+</body>
+</html>
