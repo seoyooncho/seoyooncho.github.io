@@ -22,7 +22,8 @@
         overflow:hidden;
         position:relative;
         float:left;
-        width:60%;
+        width:400px;
+       heigth: 400px;
     }
 
     .slide_section {
@@ -223,7 +224,75 @@ margin-top: 60px;
 </style>
 </head>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<body style="text-align:center;">
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <br><br>
+                  <div id='logo'>
+            <a href='index.html'><img src='img/logo.png'></a>
+
+
+          </div>
+        <div class="clear"></div>
+                <br><br>
+
+                <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    <a class="nav-link" href="1.html">Dinotaeng</a>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="drop1.html">Store</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="drop1.html">For Digital</a>
+                      <a class="dropdown-item" href="drop2.html">Living</a>
+
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="3.html">Lanking</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="4.html">Gallery</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+<br><br><br><br>
+  <h6><mark>실시간 순위</mark></h6>
+  <br>
+    <div id="canvas" style="margin:0 auto; width:400;">
+        <?php include "./slider.php"; ?>
+        <body style="text-align:center;">
+    <div class="slide_board">
+        <div class="animation_canvas">
+            <div class="slider_panel">
+                <img class="slider_image" src="img/l1.png">
+                <img class="slider_image" src="img/l2.png">
+                <img class="slider_image" src="img/l3.png">
+                <img class="slider_image" src="img/l4.png">
+                <img class="slider_image" src="img/l5.png">
+            </div>
+
+
+
+            <div class="control_panel">
+                <div class="control_button">1</div>
+                <div class="control_button">2</div>
+                <div class="control_button">3</div>
+                <div class="control_button">4</div>
+                <div class="control_button">5</div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
 jQuery(document).ready(function() {
 
@@ -299,74 +368,6 @@ jQuery(document).ready(function() {
     );
 });
 </script>
-<body style="text-align:center;">
-
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <br><br>
-                  <div id='logo'>
-            <a href='index.html'><img src='img/logo.png'></a>
-
-
-          </div>
-        <div class="clear"></div>
-                <br><br>
-
-                <ul class="nav nav-tabs">
-                  <li class="nav-item">
-                    <a class="nav-link" href="1.html">Dinotaeng</a>
-                  </li>
-
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="drop1.html">Store</a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="drop1.html">For Digital</a>
-                      <a class="dropdown-item" href="drop2.html">Living</a>
-
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="3.html">Lanking</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="4.html">Gallery</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="clear"></div>
-<br><br><br><br>
-  <h6><mark>실시간 순위</mark></h6>
-  <br>
-    <div id="canvas" style="margin:0 auto; width:400;">
-        <?php include "./slider.php"; ?>
-        <body style="text-align:center;">
-    <div class="slide_board">
-        <div class="animation_canvas">
-            <div class="slider_panel">
-                <img class="slider_image" src="img/l1.png">
-                <img class="slider_image" src="img/l2.png">
-                <img class="slider_image" src="img/l3.png">
-                <img class="slider_image" src="img/l4.png">
-                <img class="slider_image" src="img/l5.png">
-            </div>
-
-
-
-            <div class="control_panel">
-                <div class="control_button">1</div>
-                <div class="control_button">2</div>
-                <div class="control_button">3</div>
-                <div class="control_button">4</div>
-                <div class="control_button">5</div>
-            </div>
-        </div>
-
-    </div>
-
-    </div>
       <div class="clear"></div>
     <br><br>
     <div id='main_contents'>
