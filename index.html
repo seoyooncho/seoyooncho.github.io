@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Candal&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>조서윤</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+      p {
+        font-family: 'Gaegu', cursive;
+        margin:0 auto;
+        color: #8B0000;
+        font-size: 17px;
+      }
+      h2 {
+        font-family: 'Gaegu', cursive;
+        margin:0 auto;
+        color: #8B0000;
+        font-size: 17px;
+      }
+      a:link{
+        color: #8B4513;
+        text-decoration: none;
+      }
+      a:visited{
+        color: #8B4513;
+        text-decoration: none;
+      }
+      a:hover{
+        color: #DEB887;
+        text-decoration: none;
+      }
+      a:active{
+        color: #DEB887;
+        text-decoration: none;
+      }
+      body{
+        background-color: #fee799;
+      }
+      a{
+      font-family: 'Candal', sans-serif;
+        font-size: 20px;
+      }
+      .nav-item{
+        color: #DEB887;
+        text-decoration: none;
+      }
+      .dropdown-item:hover{
+        color: #DEB887;
+        text-decoration: none;
+      }
+      .dropdown-item:active{
+        color: #DEB887;
+        text-decoration: none;
+        background-color: white;
+      }
+      .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+      color: #DEB887;
+      text-decoration: none;
+      border-color: white white #DEB887;
+      background-color: #fee799;
+      }
+      .nav-tabs{
+      border-bottom: 1px solid #DEB887;
+      }
+      .nav-tabs .nav-link:hover{
+      border: 1px solid #DEB887;
+      }
+      h1{
+        font-family: 'Gaegu', cursive;
+        color: #6f4f24;
+      }
+      h4{
+        font-family: 'Gaegu', cursive;
+        color: #6f4f24;
+      }
+
+      #mainImage{
+        width: 400px; height: 300px;
+      }
+      footer{
+              width: 100%;
+              height: 160px;
+
+              background-color: #EAC65F;
+
+            }
+            #footer_box{
+              width: 1140px;
+              height: 150px;
+              margin: 0 auto;
+              border: solid 1px #EAC65F;
+            }
+            #footer_logo{
+              float: left;
+              margin: 20px 0 0 30px;
+              border: solid 1px #EAC65F;
+            }
+            #address{
+              float: right;
+              margin: 0 0 0 10px;
+              color: #cccccc;
+              border: solid 1px #EAC65F;
+            }
+
+
+    </style>
+  </head>
+  <body>
+<body style="text-align: center;">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <br><br>
+                    <div id='logo'>
+              <a href='index.html'><img src='img/logo.png'></a>
+
+
+            </div>
+                  <br><br>
+
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" href="1.html">Dinotaeng</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="2.html">Store</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="drop1.html">For Digital</a>
+                <a class="dropdown-item" href="drop2.html">Living</a>
+
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="3.html">Lanking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="4.html">Gallery</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<br><br><br>
+
+<h1>낙서같은 그림 속 다양한 이야기를 전합니다</h1>
+<br><br>
+  <img src="img/01.jpeg" id=mainImage alt="slide"  />
+<script>
+  var myImage = document.getElementById("mainImage");
+  var imageArray = [ "img/01.jpeg",
+      "img/02.jpeg", "img/03.jpeg", "img/04.jpeg" ];
+  var imageIndex = 0;
+
+  function changeImage() {
+    myImage.setAttribute("src", imageArray[imageIndex]);
+    imageIndex++;
+    if (imageIndex >= imageArray.length) {
+      imageIndex = 0;
+    }
+  }
+  setInterval(changeImage, 3000);
+</script>
+
+<br><br><br>
+<h4>다이노탱은 동물, 자연, 일상적인 소재에서 얻는 작은 영감들을 </h4>
+<h4>독자들과의 소통을 통해
+함께 이야기를 만드는 살아있는 브랜드이길 지향합니다.</h4>
+<h4>장난스러운 그림들이 가벼워보일 수 있지만, 때로는 그런 가벼움들이 더 깊이있게 느껴질 때도 있습니다.</h4>
+<h4>단순히 작고 귀여운 그림을 그려내는 것이 아닌,</h4>
+<h4>이 작은 즐거움들을 사랑하는 사람들이 모여 함께 만들 수 있는 큰 영향들을</h4>
+<h4>꾸준히 생각하고 고민하는 아티스트가 될 수 있도록 많은 상상과 도전을 하고 있습니다.</h4>
+<br><br>
+    <img src='img/bg.png' width='1775' height="350" align="bottom">
+
+    <footer>
+
+              <div id='footer_box'>
+                  <div id='footer_logo'>
+                    <img src='img/logo.png'>
+
+              </div>
+
+              <ul id='address'>
+                <h2>66, Gyewondaehak-ro, Uiwang-si, Gyeonggi-do, Republic of Korea</h2>
+                <h2>INSTARGRAM  @kaywon_univ @0CT06</h2>
+                <h2>E-MAIL  22161116@kaywon.ac.kr</h2>
+                <h2>©COPYRIGHT YOON ALL RIGHTS RESERVED </h2>
+
+              </ul>
+              </div>
+             </footer>
+
+
+
+
+
+
+  </body>
+</html>
